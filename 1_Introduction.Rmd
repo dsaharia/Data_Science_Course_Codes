@@ -1,0 +1,53 @@
+---
+title: "Introduction to R"
+author: "Dhiraj Saharia"
+output:
+  html_document:
+    df_print: paged
+    theme: flatly
+    toc: yes
+    number_sections: true
+  pdf_document: default
+---
+-----
+### Important Points
+* R does not have a way to store individual variable, it does so by creating vectors of length 1.
+----
+
+### Saving Workspace session 
+* Use `save(a, file="session1.Rdata")` to save a single variable `a`.
+* To load data use `load(file="session1.Rdata")`.
+* To save complete Workspace `save.image()` or `save(list=ls(all.names=TRUE), file="sess1.Rdata")`.
+
+### Variables and datatypes in R
+* Variable names - Start with alphabet, then Alphanumeric, '_' and '.'.
+* Predefined Constants -
+```{r}
+pi
+letters
+# Letter
+month.name
+```
+
+* Data Types -
+  1. Logical - T/F.
+  2. Integer - All Integers.
+  3. Numeric - All Real Numbers.
+  4. Complex - All Complex numbers.
+  5. Character - 'a', 'b' ... etc
+
+* Basic tasks regarding Data types -
+  1. Data type of object - `typeof(obj)`.
+  2. Verify certain data type - `is.data_type(obj)`.
+  3. Cooerce data types - `as.data_type(obj)`.
+
+* Basic objects -
+  1. Vector - Collection of same data types.
+  2. List - Collection of objects.
+  3. Data Frame - Generic tabular object.
+* Vectors -
+Named Vectors can also be created.
+```{r}
+vector = c(one=1,two=2,three=3,four=4,five=5) # Here c() is the concatenation operator.
+print(vector)
+```
