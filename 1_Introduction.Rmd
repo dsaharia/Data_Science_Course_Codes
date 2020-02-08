@@ -51,13 +51,3 @@ Named Vectors can also be created.
 vector = c(one=1,two=2,three=3,four=4,five=5) # Here c() is the concatenation operator.
 print(vector)
 ```
-
-* Dataframes -
-Generic data objects of R, used to store tabular data.
-```{r}
-name = c("dhiraj", "Steve", "Dave")
-age = c(21, 25, 28)
-subjects = c("CAO", "DS", "DAA")
-df = data.frame(name, age, subjects)
-print(df)
-```
