@@ -1,0 +1,39 @@
+---
+title: "Matrix operations in R"
+author: "Dhiraj Saharia"
+date: "08/02/2020"
+output:
+  html_document:
+    df_print: paged
+    theme: flatly
+    toc: yes
+    number_sections: true
+---
+* Matrix operations -
+  1. Rectangular arrangement of numbers in rows and columns.
+  2. Rows - horizontally and Columns - Vertically
+  
+```{r}
+A = matrix(c(1,2,3,4,5,6,7,8,9), nrow = 3, ncol = 3, byrow = TRUE)
+print(A)
+```
+* Special Matrices -
+  * Scalar Matrix - All rows and columns are filled with constant `k`. `matrix(k, m, n)`.
+  * Diagonal Matrix - Diagonals are filled with k or a vector. `diag(c(1,2,3), 3, 3)`.
+  * Identity Matrix - Diagonals are 1. Use `diag(1, m, n)`.
+  
+* Matrix metrics -
+ * `dim(A)` - return size of matrix.
+ * `nrow(A)` - return number of rows.
+ * `ncol(A)` - return number of columns.
+ * `length(A)` - return number of elements.
+ 
+* Accessing, editing and deleting in elements in matrices -
+  * Same notation used as dataframes.
+  * `rownames()` and `colnames()`.
+```{r}
+colnames(A) = c("a", "b", "c")
+rownames(A) = c("e", "f", "g")
+print(A)
+```
+  * 
