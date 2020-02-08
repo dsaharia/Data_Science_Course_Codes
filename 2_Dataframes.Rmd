@@ -1,0 +1,63 @@
+---
+title: "Introduction to Dataframes in R"
+author: "Dhiraj Saharia"
+date: "06/02/2020"
+output:
+  html_document:
+    df_print: paged
+    theme: flatly
+    toc: yes
+    number_sections: true
+  pdf_document: default
+---
+
+* Dataframes Basics -
+Generic data objects of R, used to store tabular data.
+```{r}
+name = c("dhiraj", "Steve", "Dave")
+age = c(21, 25, 28)
+subjects = c("CAO", "DS", "DAA")
+df = data.frame(name, age, subjects)
+print(df)
+```
+* Accessing Rows and Columns -
+  * df[v1, v2] refers to row v1 and column v2, Number or String. Can also be arrays.
+  * df[v2] -  Just refers to column v2.
+  * Index can be `c(1,3) or 1:3` also.
+  
+* Subset -
+`subset()` extracts subset of data based on conditions.
+```{r}
+name = c("dhiraj", "Steve", "Dave")
+age = c(21, 25, 28)
+subjects = c("CAO", "DS", "DAA")
+df = data.frame(name, age, subjects)
+df2 = subset(df, name=="dhiraj" | age > 25)
+print(df2)
+```
+* Edit Dataframes -
+```{r}
+df[[2]][2] = 30
+print(df)
+```
+Can also use `edit(df)` command.
+
+* Adding extra rows and columns -
+Use `rbin()` to add extra rows and `cbind()` for extra columns.
+```{r}
+df = cbind(df, degree = c("BTECH", "CA", "MA"))
+df = rbind(df, data.frame(name="James", age = 32, subjects="OOP", degree="MSc"))
+print(df)
+```
+
+* Deleting rows and columns -
+  * Access the row or column and then place a `-` sign to delete it.
+  * Conditional Deletion - 
+
+* Manipulating Rows - The factor issue
+  * When character columns are created in the data.frame, they become `factors`.
+  * Factor variables are those where the character column is split into categories or factor levels.
+```{r}
+df[2,1] = "Kirk" # This produces <NA> value
+```
+  * To solve the factor issue, use `stringAsFactors=F` when creating the dataframe.
