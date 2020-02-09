@@ -36,4 +36,17 @@ colnames(A) = c("a", "b", "c")
 rownames(A) = c("e", "f", "g")
 print(A)
 ```
-  * 
+  * Accessing an entry in the matrix -
+  * `A[2,3]` - 2nd row and 3rd column.
+  * `A[,3]` - Third column only. and `A[2,]` - Row two only.
+  * `A[,-2]` - Everything except the second column.
+
+* Colon Operator -
+  * Used to pick sub-matrices.
+  * `A[1:3, 1:2]` - Rows 1,2 and 3 with columns 1 and 2.
+  * `A[c(1,3), 1:2]` -  Rows 1 and 3 with columns 1 and 2.
+  
+* Matrix Concatenation -
+
+
+  
