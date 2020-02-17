@@ -1,0 +1,23 @@
+---
+title: "Salaries Exercise"
+author: "Dhiraj Saharia"
+date: "18/02/2020"
+output: html_document
+---
+## Question to be answered -
+* Average Salary of the professors:
+* The highest experience of professor since Ph.D. is:
+* The Median of years of service of professors is:
+* Variance of Salary is:
+
+---
+
+```{r}
+data <- read.csv('data/Salaries.csv')
+cat("Average Salary of professors is:", mean(data$salary))
+prof_data <- subset(data, data$rank == 'Prof')
+cat(mean(prof_data$salary))
+cat("Median of years of service of professors is: ", median(data$yrs.service))
+cat("Variance of salary is: ", var(data$salary))
+plot(data$yrs.since.phd, data$salary)
+```
