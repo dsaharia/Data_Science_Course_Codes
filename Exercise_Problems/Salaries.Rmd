@@ -3,6 +3,7 @@ title: "Salaries Exercise"
 author: "Dhiraj Saharia"
 date: "18/02/2020"
 output: html_document
+pdf_document: default
 ---
 ## Question to be answered -
 * Average Salary of the professors:
@@ -12,12 +13,24 @@ output: html_document
 
 ---
 
-```{r}
+```{r}  
 data <- read.csv('data/Salaries.csv')
 cat("Average Salary of professors is:", mean(data$salary))
-prof_data <- subset(data, data$rank == 'Prof')
-cat(mean(prof_data$salary))
+
 cat("Median of years of service of professors is: ", median(data$yrs.service))
 cat("Variance of salary is: ", var(data$salary))
-plot(data$yrs.since.phd, data$salary)
+
+greater_zero = subset(data, data$yrs.service > 0)
+greater_zero$exp <-  ifelse(greater_zero$yrs.since.phd > greater_zero$yrs.service, greater_zero$yrs.since.phd - greater_zero$yrs.service, greater_zero$yrs.since.phd)
+cat("Highest experience of professor since Ph.D. is:", max(greater_zero$exp))
+plot(data$yrs.service,
+     data$salary, 
+     main = "Service years Vs Salary", 
+     xlab = "Years of service", 
+     frame.plot = FALSE)
+
+hist(data$salary,
+     main = "Histogram of Salaries of Professors",
+     col = "lightblue",
+     xlab = "Salaries")
 ```
