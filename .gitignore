@@ -4,7 +4,6 @@
 *.DS_Store
 # Session Data files
 .RData
-*.html
 # User-specific files
 .Ruserdata
 data/
